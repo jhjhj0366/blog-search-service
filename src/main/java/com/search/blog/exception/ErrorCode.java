@@ -9,7 +9,8 @@ public enum ErrorCode {
     NOT_EXISTS(400, "Not found Resources"),
     METHOD_NOT_ALLOWED(405, "This HttpMethod is not supported"),
     INTERNAL_SERVER_ERROR(500, "internal Server Error"),
-    BAD_REQUEST(400, "parameter is not available");
+    BAD_REQUEST(400, "parameter is not available"),
+    USER_NOT_EXIST(400,"user is not found" );
 
     private int status;
     private String message;

@@ -7,7 +7,7 @@ spring:
       driver-class-name: org.h2.Driver
       jdbc-url: jdbc:h2:./data/blog
       username: sa
-      password:i
+      password:
   h2:
     console:
       enabled: true
@@ -15,11 +15,21 @@ spring:
   jpa:
     show-sql: false
     hibernate:
-      ddl-auto: create
+      ddl-auto: create-drop
     properties:
       hibernate:
-        format-sql: false
+        format_sql: true
+        show_sql: true
     open-in-view: false
   devtools:
     restart:
       enabled: true
+
+jwt:
+  header: Authorization
+  secret: aHR0cHM6Ly9naXRodWIuY29tL2poamhqMDM2Ni9ibG9nLXNlYXJjaC1zZXJ2aWNl
+  token-validity-in-seconds: 86400
+
+logging:
+  level:
+    com.search: DEBUG

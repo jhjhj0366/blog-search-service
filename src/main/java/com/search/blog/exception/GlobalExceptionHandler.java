@@ -21,8 +21,8 @@ public class GlobalExceptionHandler {
     }
 
     // BusinessException
-    @ExceptionHandler(BusinessException.class)
-    protected ResponseEntity<ErrorResponse> handleBusinessException(BusinessException e) {
+    @ExceptionHandler(BlogServiceException.class)
+    protected ResponseEntity<ErrorResponse> handleBusinessException(BlogServiceException e) {
         ErrorResponse errorResponse = ErrorResponse.of(e.getErrorCode(), e.getHttpStatus(),
                 e.getMessage());
         return new ResponseEntity<>(errorResponse, e.getHttpStatus());
